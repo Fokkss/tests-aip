@@ -1,11 +1,13 @@
 def task_1(two_dim_words):
-    """
-        Здесь должен быть ваш код.
-        Переменная two_dim_words - ваш двумерный список.
-        Заполнять список значениями не нужно.
-        Финальное значение должно быть помещено в переменную sorted_words.
-        """
-
+    lst = []
+    cnt = 0
+    lst1 = len(two_dim_words)
+    for i in range(lst1):
+        lst += two_dim_words[i]
+    for j, string in enumerate(lst):
+        lst[j] = "".join(sorted(list(string)))
+        lst.sort(key=lambda k: (len(k), k), reverse=True)
+    sorted_words = lst
     return sorted_words
 
 def task_4_1(words):
@@ -19,22 +21,30 @@ def task_4_1(words):
 
 
 def task_4_2(words):  # можно сделать тесты
-    """
-        Здесь должен быть ваш код.
-        Переменная words - ваш кортеж слов из задания.
-        Финальное значение должно быть помещено в переменную res.
-        """
-
+    words0 = list(words)
+    words1 = []
+    for i in words0:
+        if len(i) > 3:
+            words1.append(i)
+        else:
+            del i
+    res = set(words1)
     return res
 
 
 def task_4_3(words):
-    """
-        Здесь должен быть ваш код.
-        Переменная words - ваш кортеж слов из задания.
-        Финальное значение должно быть помещено в переменную res.
-        """
-
+   words0 = list(words)
+    words1 = []
+    v = "aoiuey"
+    for i in words0:
+        i = i.lower()
+        for l in i:
+            if l in v and i[-1] == "a":
+                i = i.replace(l, " ")
+                words1.append(i)
+            else:
+                del l
+    res = words1
     return res
 
 
