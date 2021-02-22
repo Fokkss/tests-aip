@@ -11,12 +11,20 @@ def task_1(two_dim_words):
     return sorted_words
 
 def task_4_1(words):
-    """
-        Здесь должен быть ваш код.
-        Переменная words - ваш кортеж слов из задания.
-        Финальное значение должно быть помещено в переменную res.
-        """
-
+   words0 = list(words)
+   words1 = []
+   cnt = 0
+   s = 'a'
+   for i in words0:
+       i = i.lower()
+       for a in i:
+           if a in s and len(a) >= 2:
+               cnt = len(a)
+               res1 = cnt**2
+               words1.append(res1)
+           else:
+               pass
+    res = tuple(words1)
     return res
 
 
@@ -61,5 +69,3 @@ def task_6(lst):
     lst2 = list(lst1)
     res = sorted(lst2, reverse=True)
     return res
-#пока не готово
-
